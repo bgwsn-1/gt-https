@@ -1,6 +1,6 @@
 # Growtopia HTTPS Redirect & Cache Server
 
-A lightweight C++ HTTP/HTTPS redirect and caching server designed for Growtopia Private Servers (GTPS). It utilizes [httplib.h](file:///c:/Users/bagus/Downloads/gt-https-adamwya/httplib.h) with OpenSSL support and `libcurl` to dynamically fetch assets from the official Growtopia CDN.
+A lightweight C++ HTTP/HTTPS redirect and caching server designed for Growtopia Private Servers (GTPS). It utilizes [httplib.h](./httplib.h) with OpenSSL support and `libcurl` to dynamically fetch assets from the official Growtopia CDN.
 
 ---
 
@@ -9,7 +9,7 @@ A lightweight C++ HTTP/HTTPS redirect and caching server designed for Growtopia 
 1. **Dual Port Listener:** Listens on port `80` (HTTP) and `443` (HTTPS) simultaneously.
 2. **Auto CDN Cache:** Intercepts client asset requests (e.g., `/cache/...`) and dynamically downloads missing assets from the official Growtopia CDN, saving them in the `cache/` directory.
 3. **Asset Override:** Allows you to serve custom game assets (e.g., modified `.rttex` textures or audio) by placing them in the `override/` directory.
-4. **Server Data Router:** Securely serves the [server_data.php](file:///c:/Users/bagus/Downloads/gt-https-adamwya/assets/server_data.php) configuration file to the client.
+4. **Server Data Router:** Securely serves the [server_data.php](./assets/server_data.php) configuration file to the client.
 
 ---
 
@@ -27,7 +27,7 @@ A `cert.crt` file is already provided for direct installation. Choose one of the
 3. On the Certificate Store page:
    * Select **Place all certificates in the following store**.
    * Click **Browse...**, select **Trusted Root Certification Authorities**, and click **OK**.
-4. Click **Next**, then click **Finish**.
+4. Click **Next**, then **Finish**.
 5. If a security warning dialog appears, click **Yes**.
 
 ### Method B: Via PowerShell (Command Line)
@@ -42,7 +42,7 @@ A `cert.crt` file is already provided for direct installation. Choose one of the
 ## 🚀 How to Run the Server
 
 1. **Prepare the Certificates:**
-   Ensure `cert.pem` and `key.pem` are placed in the [assets/](file:///c:/Users/bagus/Downloads/gt-https-adamwya/assets) folder.
+   Ensure `cert.pem` and `key.pem` are placed in the [assets/](./assets) folder.
 2. **Configure the Hosts File:**
    Redirect the official Growtopia domains to your local IP (`127.0.0.1`). Add the following lines to your Windows hosts file (`C:\Windows\System32\drivers\etc\hosts`):
    ```text
@@ -56,7 +56,6 @@ A `cert.crt` file is already provided for direct installation. Choose one of the
 
 ## 📂 Directory Structure
 
-* 📂 **[assets/](file:///c:/Users/bagus/Downloads/gt-https-adamwya/assets)**: Contains SSL certificates (`cert.pem`, `key.pem`) and the [server_data.php](file:///c:/Users/bagus/Downloads/gt-https-adamwya/assets/server_data.php) configuration file.
-* 📂 **[cache/](file:///c:/Users/bagus/Downloads/gt-https-adamwya/cache)**: Stores cached game assets downloaded from the CDN.
+* 📂 **[assets/](./assets)**: Contains SSL certificates (`cert.pem`, `key.pem`) and the [server_data.php](./assets/server_data.php) configuration file.
+* 📂 **[cache/](./cache)**: Stores cached game assets downloaded from the CDN.
 * 📂 **override/**: Put your custom modified assets here to override CDN files.
-* 📄 **[Main.cpp](file:///c:/Users/bagus/Downloads/gt-https-adamwya/Main.cpp)**: Main C++ HTTP/HTTPS server source code.
